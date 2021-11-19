@@ -1,5 +1,7 @@
 import serial as s
 import time
+import cv2
+
 
 Serial = s.Serial("/dev/ttyUSB0",9600)
 time.sleep(2) # sistemin hazır hale gelmesi için bir süre bekletiyoruz
