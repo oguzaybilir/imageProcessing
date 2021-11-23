@@ -1,6 +1,6 @@
 import serial as s
 import time
-import cv2
+
 
 
 Serial = s.Serial("/dev/ttyUSB0",9600)
