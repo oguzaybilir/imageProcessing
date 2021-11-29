@@ -4,7 +4,7 @@ Servo servomotor;
 
 int target = 0;
 int last_position_of_target = 0;
-int servopin = 8;
+int servopin = 9;
 
 
 void setup() {

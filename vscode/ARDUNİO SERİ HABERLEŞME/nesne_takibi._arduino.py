@@ -27,14 +27,14 @@ while True:
     bitwise = cv2.bitwise_and(frame,frame,mask = mask)
 
     
-    cv2.line(frame,(cols//2-10,rows//2),(cols//2+10,rows//2),(python0,255,0),2)
+    cv2.line(frame,(cols//2-10,rows//2),(cols//2+10,rows//2),(0,255,0),2)
     cv2.line(frame,(cols//2, rows//2-10),(cols//2,rows//2+10),(0,255,0),2)
     cv2.circle(frame,(cols//2, rows//2),3,(0,0,255),-1)
     for cnt in contours:
         area =  cv2.contourArea(cnt)
         if area > 100:
             (x,y,w,h) = cv2.boundingRect(cnt)
-            cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),thickness=2)
+            cv2.rectangle(frame, (x,y),(x+w,y+h),(255,0,0),thickness=2)
             cv2.line(frame,(x+int(w/2),0),(x+int(w/2),rows),(0,255,0),2)
             cv2.line(frame,(0,y+int(h/2)),(cols,y+int(h/2)),(0,255,0),2)
             pos = x-cols//2
@@ -44,6 +44,7 @@ while True:
             #Serial.write(pos.encode())
             Serial.write(pos.encode())
            # time.sleep(4)
+
     cv2.imshow("frame",frame)
     #cv2.imshow("mask",mask)
     #cv2.imshow("bitwise",bitwise)

@@ -2,7 +2,7 @@
 
 Servo servo; // servo controller (multiple can exist)
 
-int servo_pin = 8; // PWM pin for servo control
+int servo_pin = 9; // PWM pin for servo control
 int pos = 0;    // servo starting position
 int input = Serial.parseInt();
 
