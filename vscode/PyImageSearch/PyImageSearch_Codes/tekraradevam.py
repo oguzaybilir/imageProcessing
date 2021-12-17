@@ -19,6 +19,17 @@ cv2.imshow("edged",edge)
 thresh = cv2.threshold(gray, 225,255, cv2.THRESH_BINARY_INV)[1]  #resmi threshold ettik 
 cv2.imshow("thresh",thresh)
 
+mask = thresh.copy()
+mask = cv2.erode(mask,None,iterations=5)
+cv2.imshow("eroded",mask)
+
+mask = cv2.dilate(mask,None,iterations=5)
+cv2.imshow("dilated",mask)
+
+mask = thresh.copy()
+output = cv2.bitwise_and(img, img, mask=mask)
+cv2.imshow("output",output)
+
 cnt = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # konturleri buluyoruz
 cnt = imutils.grab_contours(cnt) # buldurduğumuz konturleri piksel sırasına göre sıralıyor
 output = img.copy() #elimizdeki görselin kopyasını kullanıyoruz
