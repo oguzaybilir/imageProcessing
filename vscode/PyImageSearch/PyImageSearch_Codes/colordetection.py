@@ -21,5 +21,5 @@ for (lower,upper) in boundaries:
     mask = cv2.inRange(img,lower, upper)
     output = cv2.bitwise_and(img, img, mask = mask)
 
-    cv2.imshow("images", np.hstack([img,output]))
-    cv2.waitKey(0)
+cv2.imshow("images", np.hstack([img,output]))
+cv2.waitKey(0)
