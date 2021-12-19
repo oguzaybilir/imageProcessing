@@ -16,7 +16,7 @@ shifted = cv2.pyrMeanShiftFiltering(image,21,51) #pyramid mean shift filtresini 
 gray = cv2.cvtColor(shifted,cv2.COLOR_BGR2GRAY) #klasik renk uzayı dönüşümü
 thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)[1]  #klasik threshold
 
-contours = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE) #klasik olmayan konur bulma, normalde cv2.RETR_TREE yazılırdı şimdi cv2.RETT_EXTERNAL yazdık
+contours = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE) #klasik olmayan kontur bulma, normalde cv2.RETR_TREE yazılırdı şimdi cv2.RETT_EXTERNAL yazdık
 contours = imutils.grab_contours(contours) #imutils hiyerearşi yapısı olmadan konturleri sıralamada kullanılır
 print("[INFO] {}  unique contours found".format(len(contours)))
 
