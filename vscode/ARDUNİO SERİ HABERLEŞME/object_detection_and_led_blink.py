@@ -38,10 +38,10 @@ while True:
             #cv2.putText(frame,"led kapanır",())
             if x < int(cols/2):
                 Serial.write(b'1')
-                print("led yandı")
+                print("led yandi")
             else:
                 Serial.write(b'0')
-                print("led kapatıldı")
+                print("led kapatildi")
 
             
     cv2.imshow("frame",frame)
