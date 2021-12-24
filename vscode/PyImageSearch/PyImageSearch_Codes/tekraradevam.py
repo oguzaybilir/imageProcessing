@@ -19,7 +19,7 @@ cv2.imshow("edged",edge)
 thresh = cv2.threshold(gray, 225,255, cv2.THRESH_BINARY_INV)[1]  #resmi threshold ettik 
 cv2.imshow("thresh",thresh)
 
-mask = thresh.copy()
+mask = thresh.copy()    
 mask = cv2.erode(mask,None,iterations=5)
 cv2.imshow("eroded",mask)
 
