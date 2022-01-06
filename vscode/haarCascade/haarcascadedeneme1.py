@@ -34,7 +34,7 @@ while True:
                 cv2.imwrite(f'/home/oguzay/Documents/GitHub/HAARCASCADE/negative/oguzay{tarih}.png',roi) 
                 print("resim kaydedildi")
         except:
-            print("yüz bulamadı")
+            print("yüz bulamadi")
 
 
         if cv2.waitKey(20) == ord('q'):
