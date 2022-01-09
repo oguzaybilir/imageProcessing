@@ -19,7 +19,7 @@ for imagepath in imagepaths: # resim dosya yollarının içinde dönen bir döng
     image = cv2.imread(imagepath)   # görselleri yükledik ve görsel listesini güncelledik
     images.append(image)
 
- # görseller için montagesleri kurduk
+# görseller için montagesleri kurduk
 montages = build_montages(images, (128,196), (7,3))
 
 for montage in montages:

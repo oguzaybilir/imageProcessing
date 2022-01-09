@@ -24,7 +24,7 @@ cnts = imutils.grab_contours(cnts)
 if len(cnts) > 0:    #en az bir konturun var olduğundan emin olmalıyız
 
     c = max(cnts, key = cv2.contourArea)   # en büyük konturu alıyoruz
-    mask = np.zeros(gray.shape, dtype = "uint8")
+    mask = np.zeros(gray.shape, dtype = "uint8")    # maskeleme yapıyoruz
     cv2.drawContours(mask, [c], -1, 255, 1)
 
 
@@ -32,7 +32,7 @@ if len(cnts) > 0:    #en az bir konturun var olduğundan emin olmalıyız
     (x,y,w,h) = cv2.boundingRect(c)
     roi = img[y :y +h , x:x +w]
     roimask = mask[y:y+h, x:x+w]    
-    roi = cv2.bitwise_and(roi, roi, mask=roimask)
+    roi = cv2.bitwise_and(roi, roi, mask=roimask)   #   bitwise işleçlleri kullanarak renkli bir görüntüye sahip olduk
 
     cv2.imshow("mask",roimask)
     cv2.waitKey(0)
