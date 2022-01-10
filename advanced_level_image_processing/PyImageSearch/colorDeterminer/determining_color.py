@@ -20,7 +20,7 @@ gray = cv2.cvtColor(blurred,cv2.COLOR_BGR2GRAY)    #   resmi griye çevirdik
 lab = cv2.cvtColor(blurred,cv2.COLOR_BGR2LAB)  #   görseli L*a*b* renk uzayına geçirdik
 thresh = cv2.threshold(gray,60,255,cv2.THRESH_BINARY)[1]    #   görseli threshold ettik
 
-cnts = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)    # görseldeki kontur-leri çizdirdik
+cnts = cv2.findContours(thresh.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)    # görseldeki konturleri çizdirdik
 cnts = imutils.grab_contours(cnts)  #   imutilsin kontur tutma fonksiyonunu kullandık
 
 sd = ShapeDetector()    #PyImageSearch ün yazdığı class ı kullandık
