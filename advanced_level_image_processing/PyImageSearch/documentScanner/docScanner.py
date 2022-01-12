@@ -18,7 +18,6 @@ gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 gray = cv2.GaussianBlur(gray,(5,5),0)
 edged = cv2.Canny(gray,110,50)
 
-
 print("ADIM 1: KENAR TESPITI")
 cv2.imshow("Image",image)
 cv2.imshow("Edged",edged)
