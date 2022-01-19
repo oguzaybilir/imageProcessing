@@ -7,10 +7,10 @@ import cv2
 
 ap = argparse.ArgumentParser()  #argparse ile kullanicidan video yolunu ve takip edilecek objenin minimum alanın aldık
 ap.add_argument("-v", "--video",help="path to the video file")
-ap.add_argument("-a","--min-area",type=int, default=1200, help="minimum area size")
+ap.add_argument("-a","--min-area",type=int, default=3000, help="minimum area size")
 args = vars(ap.parse_args())
 
-print("bize ne veriyor",args["video"])
+#print("bize ne veriyor",args["video"])
 
 if args["video"] == None: #eğer video argümanı None ise (yoksa), webcami açıyoruz
     cap = cv2.VideoCapture(0)
@@ -28,7 +28,7 @@ while True: #framelerin içinde dönüyoruz
     ret, frame = cap.read()   #ilk frame i al ve dolu mu boş mu diye bak 
     text = "Unoccupied"
 
-    if ret is False:   #   frame None ise
+    if ret == False:   #   frame None ise
         break   #programı kapat
 
     frame = imutils.resize(frame, width=500)
@@ -50,7 +50,6 @@ while True: #framelerin içinde dönüyoruz
 
         if cv2.contourArea(c) > args["min_area"]:   #   eğer konturlerin alanı bizim belirlediğimiz alandan küçükse devam et
             
-
             (x,y,w,h) = cv2.boundingRect(c) #   konturlerin x y koordinatlarını ve w h (genişlik uzunluk) değerlerini alıyoruz
             cv2.rectangle(frame,(x,y),(x+w, y+h),(0,255,0),2)   #   aldığımız x,y,w,h lar ile objenin etrafına bir dikdörtgen çizdiriyoruz
             text = "Occupied"
@@ -61,7 +60,7 @@ while True: #framelerin içinde dönüyoruz
 
 
     cv2.imshow("Security Feed",frame)
-    cv2.imshow("Thresh",thresh)
+    #cv2.imshow("Thresh",thresh)
     cv2.imshow("Frame Delta",frameDelta)
     
     key = cv2.waitKey(1)
