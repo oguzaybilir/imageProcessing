@@ -35,12 +35,22 @@ for c in cnts:
 
     approx = cv2.approxPolyDP(c,0.02*perimeter, True)
 
+    (x,y,w,h) = cv2.boundingRect(c)
+    
+    (cx,cy),r = cv2.minEnclosingCircle(c)
+
+    cv2.rectangle(orig,(int(x),int(y)),(int(x+w),int(x+h)),(255,0,0),2)
+    cv2.imshow("points",orig)
+
+
     if len(approx) == 4:
         screenCnt = approx
         break
 
 print("ADIM 2: KONTURLER CIZILDI")
-cv2.imshow("outline",image)
+
+cv2.drawContours(gray,[c],-1,(0,0,255),1)
+cv2.imshow("outline",gray)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
