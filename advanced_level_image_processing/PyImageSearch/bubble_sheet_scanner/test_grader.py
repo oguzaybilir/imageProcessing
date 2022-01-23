@@ -71,8 +71,7 @@ for c in cnts:  #   c değerinin içinde dönüyoruz
     if area >900:
 
         cv2.rectangle(paper_copy, (int(x),int(y)),((int(x)+int(w)),(int(y)+int(h))), (0,0,255),2)
-
-        #if w >= 7 and h>=14 and ar >= 0.9 and ar <=1.1:    #bubble ların aspectRatio oranı ortalama 1 olmalıdır
+                                                                                                #bubble ların aspectRatio oranı ortalama 1 olmalıdır
         questionCnts.append(c)
         (cx,cy),r = cv2.minEnclosingCircle(c)
 
