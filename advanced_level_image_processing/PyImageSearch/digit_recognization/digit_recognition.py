@@ -80,7 +80,7 @@ for c in cnts:
 		digitCnts.append(c)
 
 
-digitCnts = sorting_contours.sort_contours(digitCnts,method="left-to-right")[0]
+#digitCnts = sorting_contours.sort_contours(digitCnts,method="left-to-right")[0]
 digits = []
 
 for c in digitCnts:
