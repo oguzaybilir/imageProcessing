@@ -24,3 +24,6 @@ for numSeams in range(20,140,20):
     cv2.imshow("Carved",carved)
     cv2.waitKey(0)
 
+"""
+kodlar çöp seam_carving skimageden kaldırılmış
+"""
