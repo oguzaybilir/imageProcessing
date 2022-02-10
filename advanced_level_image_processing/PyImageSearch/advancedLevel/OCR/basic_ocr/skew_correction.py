@@ -1,4 +1,4 @@
-import cv2          #   gerekli kütüphanleri ekledik
+import cv2          #   gerekli kütüphaneleri ekledik
 import numpy as np
 import argparse
 

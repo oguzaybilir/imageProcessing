@@ -45,16 +45,16 @@ while True:
     upperS = cv2.getTrackbarPos("Upper-S","Trackbar") #burada en üst değerlerimizi bir değişkene atadık.
     upperV = cv2.getTrackbarPos("Upper-V","Trackbar")
 
-    yellow1=np.array([22,109,57])
-    yellow2=np.array([97,182,167])  #sarı rengin trackbar'dan bulup şimdi sadeece takip etmesini sağlayabilirim.
+    yellow1=np.array([0,137,162])
+    yellow2=np.array([180,255,251])  #sarı rengin trackbar'dan bulup şimdi sadeece takip etmesini sağlayabilirim.
 
     mask= cv2.inRange(frame,yellow1,yellow2) #maskelemek için 3 tane değişkenimi girdim.
 
     bitAnd = cv2.bitwise_and(frameHsv,frame,mask)
-    bitRGB = cv2.cvtColor(bitAnd, cv2.COLOR_BGR2RGB)
+    #bitRGB = cv2.cvtColor(bitAnd, cv2.COLOR_BGR2RGB)
 
      
-    cv2.imshow("bitwise", bitRGB)
+    #cv2.imshow("bitwise", bitRGB)
     cv2.imshow("orijinal", frame)
     cv2.imshow("masked1", mask)
 
